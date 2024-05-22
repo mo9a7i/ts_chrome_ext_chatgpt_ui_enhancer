@@ -1,0 +1,25 @@
+{
+  "name": "ts_chrome_ext_chatgpt_ui_enhancer",
+  "version": "1.0.0",
+  "description": "A Chrome extension to enhance ChatGPT",
+  "main": "dist/background.js",
+  "scripts": {
+    "build": "tsc && pnpm copyfiles",
+    "copyfiles": "copyfiles manifest.json icons/* popup.html dist",
+
+    "watch": "concurrently \"pnpm watch:ts\" \"pnpm copyfiles:watch\"",
+    "watch:ts": "tsc --watch",
+    "copyfiles:watch": "copyfiles manifest.json icons/* popup.html dist"
+
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chrome": "^0.0.268",
+    "concurrently": "^8.2.2",
+    "copyfiles": "^2.4.1",
+    "typescript": "^5.4.5"
+  }
+}
